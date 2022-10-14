@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const devMode = process.env.NODE_ENV !== "production";
 
 module.exports = {
     entry: {
@@ -18,43 +19,23 @@ module.exports = {
                 exclude: '/node_modules/',
             },
             {
-                test: /\.scss$/i,
+                test: /\.(sa|sc|c)ss$/,
                 use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
+                    devMode ? "style-loader" : MiniCssExtractPlugin.loader,
                     {
-                        loader: 'css-loader',
+                        loader: "css-loader",
                         options: {
                             sourceMap: true,
                         },
                     },
                     {
-                        loader: 'postcss-loader',
+                        loader: "postcss-loader",
                         options: {
                             sourceMap: true,
                         },
                     },
                     {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                ],
-            },
-            {
-                test: /\.css$/i,
-                use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true,
-                        },
-                    },
-                    {
-                        loader: 'postcss-loader',
+                        loader: "sass-loader",
                         options: {
                             sourceMap: true,
                         },
@@ -71,9 +52,5 @@ module.exports = {
             directory: path.join(__dirname),
         },
     },
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: '[name].css',
-        }),
-    ],
+    plugins: [].concat(devMode ? [] : [new MiniCssExtractPlugin({ filename: '[name].css' })]),
 };
