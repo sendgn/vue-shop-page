@@ -65,7 +65,7 @@ module.exports = {
     },
     devServer: {
         client: {
-            overlay: true,
+            overlay: false,
         },
         static: {
             directory: path.join(__dirname),
