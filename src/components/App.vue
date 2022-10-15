@@ -1,22 +1,23 @@
 <template>
-    <h1>Webpack message: {{ message }}</h1>
+    <button @click="addLike">Add like</button>
+    <h1>Likes: {{ likes }}</h1>
 </template>
 
 <script>
     export default {
         data() {
             return {
-                message: null,
+                likes: 0,
             }
         },
-        created() {
-            this.message = 'Все работает!';
+        methods: {
+            addLike() {
+                this.likes++;
+            },
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    h1 {
-        color: red;
-    }
+    
 </style>
