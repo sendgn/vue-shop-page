@@ -11,8 +11,8 @@ const devWebpackConfig = merge(commonWebpackConfig, {
         port: 8081,
         client: {
             overlay: {
+                errors: true,
                 warnings: true,
-                errors: true
             },
         },
         static: {

@@ -15,8 +15,8 @@
         "type": "git",
         "url": "git+https://github.com/sendgn/webpack-template.git"
     },
-    "author": "Jack",
-    "license": "MIT",
+    "author": "sendgn",
+    "license": "",
     "bugs": {
         "url": "https://github.com/sendgn/webpack-template/issues"
     },
@@ -37,6 +37,9 @@
         "postcss-loader": "^7.0.1",
         "sass-loader": "^13.1.0",
         "style-loader": "^3.3.1",
+        "vue-loader": "^17.0.0",
+        "vue-style-loader": "^4.1.3",
+        "vue-template-compiler": "^2.7.13",
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.11.1",
