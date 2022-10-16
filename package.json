@@ -1,5 +1,5 @@
 {
-    "name": "webpack-template",
+    "name": "vue-shop-page",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -13,14 +13,14 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sendgn/webpack-template.git"
+        "url": "git+https://github.com/sendgn/vue-shop-page.git"
     },
     "author": "sendgn",
     "license": "",
     "bugs": {
-        "url": "https://github.com/sendgn/webpack-template/issues"
+        "url": "https://github.com/sendgn/vue-shop-page/issues"
     },
-    "homepage": "https://github.com/sendgn/webpack-template#readme",
+    "homepage": "https://github.com/sendgn/vue-shop-page#readme",
     "devDependencies": {
         "@babel/core": "^7.19.3",
         "@babel/preset-env": "^7.19.4",
