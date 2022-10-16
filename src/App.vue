@@ -1,23 +1,17 @@
 <template>
-    <button @click="addLike">Add like</button>
-    <h1>Likes: {{ likes }}</h1>
+    <div class="app"></div>
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                likes: 0,
-            }
-        },
-        methods: {
-            addLike() {
-                this.likes++;
-            },
-        }
-    }
+export default {
+
+}
 </script>
 
-<style lang="scss" scoped>
-    
+<style lang="scss">
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 </style>
