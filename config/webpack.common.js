@@ -86,10 +86,12 @@ module.exports = {
                 {
                     from: `${PATHS.src}/img`,
                     to: `${PATHS.assets}img`,
+                    noErrorOnMissing: true,
                 },
                 {
                     from: `${PATHS.src}/static`,
                     to: '',
+                    noErrorOnMissing: true,
                 },
             ], 
         }),
