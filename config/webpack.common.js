@@ -21,7 +21,7 @@ module.exports = {
         app: PATHS.src,
     },
     output: {
-        filename: `${PATHS.assets}js/[name].js`,
+        filename: `${PATHS.assets}js/[name].[hash].js`,
         path: PATHS.dist,
         publicPath: '/',
     },
@@ -40,6 +40,13 @@ module.exports = {
                         scss: 'vue-style-loader!css-loader!sass-loader',
                     },
                     hotReload: true,
+                },
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
                 },
             },
             {
@@ -66,9 +73,18 @@ module.exports = {
                         },
                     },
                     {
+                        loader: "resolve-url-loader",
+                        options: {
+                            sourceMap: true
+                        },
+                    },
+                    {
                         loader: "sass-loader",
                         options: {
                             sourceMap: true,
+                            additionalData: `
+                                @import 'src/scss/utils/vars.scss';
+                            `
                         },
                     },
                 ],
@@ -90,6 +106,11 @@ module.exports = {
                     noErrorOnMissing: true,
                 },
                 {
+                    from: `${PATHS.src}/fonts`,
+                    to: `${PATHS.assets}fonts`,
+                    noErrorOnMissing: true,
+                },
+                {
                     from: `${PATHS.src}/static`,
                     to: '',
                     noErrorOnMissing: true,
@@ -102,7 +123,7 @@ module.exports = {
         }),
     ].concat(devMode ? [] : [
         new MiniCssExtractPlugin({
-            filename: `${PATHS.assets}css/[name].css`
+            filename: `${PATHS.assets}css/[name].[hash].css`
         }),
     ]),
 };

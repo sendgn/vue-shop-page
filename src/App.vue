@@ -1,5 +1,7 @@
 <template>
-    <div class="app"></div>
+    <div class="app">
+        <h1>Привет мир!</h1>
+    </div>
 </template>
 
 <script>
@@ -9,9 +11,5 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 </style>
