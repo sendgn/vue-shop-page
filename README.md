@@ -4,7 +4,7 @@
 # Download repository:
 git clone https://github.com/sendgn/vue-shop-page.git
 # Go to the app:
-cd vue-shop-page
+cd webpack-template
 # Install dependencies:
 npm install
 # Output will be at dist/ folder
