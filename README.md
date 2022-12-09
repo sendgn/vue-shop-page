@@ -2,7 +2,7 @@
 
 ```bash
 # Download repository:
-git clone https://github.com/sendgn/vue-shop-page.git
+git clone https://github.com/sendgn/webpack-template.git
 # Go to the app:
 cd webpack-template
 # Install dependencies:
